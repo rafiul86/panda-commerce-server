@@ -1,6 +1,6 @@
 const express = require('express')
 require('dotenv').config()
-
+const port = 5000 
 const app = express()
 const cors = require('cors')
 const MongoClient = require('mongodb').MongoClient;
@@ -47,4 +47,4 @@ client.connect(err => {
     })
   console.log('database connected')
 });
-app.listen(5000)
+app.listen(process.env.PORT || port)
